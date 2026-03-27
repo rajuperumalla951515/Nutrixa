@@ -269,6 +269,62 @@ st.markdown("""
         transition: 0s !important;
         transform: translate(0, 5%) !important;
     }
+    /* Responsive Nutrition Table for Mobile */
+    @media screen and (max-width: 768px) {
+        .nutrition-table, 
+        .nutrition-table thead, 
+        .nutrition-table tbody, 
+        .nutrition-table th, 
+        .nutrition-table td, 
+        .nutrition-table tr { 
+            display: block !important; 
+            width: 100% !important;
+        }
+        
+        /* Hide traditional header row */
+        .nutrition-table thead tr { 
+            position: absolute !important;
+            top: -9999px !important;
+            left: -9999px !important;
+        }
+        
+        .nutrition-table tr { 
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            margin-bottom: 12px !important;
+            border-radius: 12px !important;
+            background: rgba(255, 255, 255, 0.02) !important;
+            padding: 8px 0 !important;
+        }
+        
+        .nutrition-table td { 
+            border: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; 
+            position: relative !important;
+            padding-left: 45% !important; 
+            text-align: right !important;
+            min-height: 40px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+            padding-right: 15px !important;
+        }
+        
+        .nutrition-table td:last-child {
+            border-bottom: none !important;
+        }
+        
+        .nutrition-table td:before { 
+            position: absolute !important;
+            left: 15px !important;
+            width: 40% !important; 
+            white-space: nowrap !important;
+            content: attr(data-label) !important;
+            font-weight: 700 !important;
+            color: #ff8c00 !important;
+            text-align: left !important;
+            font-size: 0.8rem !important;
+        }
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -482,7 +538,7 @@ with tab1:
   </div>
   <div style='margin-bottom:10px;'>{food_name_html}</div>
   <p style='color:#bbbbbb; font-size:0.9rem; font-family:Outfit,sans-serif; line-height:1.7; margin-bottom:12px;'>{ctx}</p>
-  <table style='width:100%; border-collapse:collapse; font-family:Outfit,sans-serif; font-size:0.88rem; text-align:center;'>
+  <table class='nutrition-table' style='width:100%; border-collapse:collapse; font-family:Outfit,sans-serif; font-size:0.88rem; text-align:center;'>
     <thead>
       <tr style='background:rgba(255,140,0,0.1);'>
         <th style='padding:8px; color:#ff8c00; border-bottom:1px solid rgba(255,255,255,0.1);'>🔥 Energy</th>
@@ -496,13 +552,13 @@ with tab1:
     </thead>
     <tbody>
       <tr style='color:#ffffff;'>
-        <td style='padding:8px; font-weight:700;'>{kcal:.0f} kcal</td>
-        <td style='padding:8px;'>{protein:.1f}g</td>
-        <td style='padding:8px;'>{carbs:.1f}g</td>
-        <td style='padding:8px;'>{fat:.1f}g</td>
-        <td style='padding:8px;'>{fibre:.1f}g</td>
-        <td style='padding:8px;'>{sugar:.1f}g</td>
-        <td style='padding:8px;'>{calcium:.1f}mg</td>
+        <td data-label='Energy' style='padding:8px; font-weight:700;'>{kcal:.0f} kcal</td>
+        <td data-label='Protein' style='padding:8px;'>{protein:.1f}g</td>
+        <td data-label='Carbs' style='padding:8px;'>{carbs:.1f}g</td>
+        <td data-label='Fat' style='padding:8px;'>{fat:.1f}g</td>
+        <td data-label='Fibre' style='padding:8px;'>{fibre:.1f}g</td>
+        <td data-label='Sugar' style='padding:8px;'>{sugar:.1f}g</td>
+        <td data-label='Calcium' style='padding:8px;'>{calcium:.1f}mg</td>
       </tr>
     </tbody>
   </table>"""
