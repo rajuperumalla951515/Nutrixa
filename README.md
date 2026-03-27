@@ -6,13 +6,13 @@
 
 **Nutrixa** is a premium, AI-powered Health Companion built with Streamlit and the Google Gemini API. It provides personalized meal planning, instant nutritional analysis from food images, and expert health insights in a modern dark-mode interface.
 
-## ✨ Features
-- **🥗 Personalized Meal Plans:** 7-day schedules tailored precisely to your goals and dietary needs.
-- **🔍 Image-Based Analysis:** Upload food photos for instant calorie calculations and macro estimates.
-- **🧠 Expert Insights:** Real-time AI-driven health advice and reliable nutritional logic.
-- **⚡ Offline Fallback:** Seamlessly switches to a rich local dataset (`foods.csv`) during API outages to guarantee zero downtime.
+##  Features
+- ** Personalized Meal Plans:** 7-day schedules tailored precisely to your goals and dietary needs.
+- ** Image-Based Analysis:** Upload food photos for instant calorie calculations and macro estimates.
+- ** Expert Insights:** Real-time AI-driven health advice and reliable nutritional logic.
+- ** Offline Fallback:** Seamlessly switches to a rich local dataset (`foods.csv`) during API outages to guarantee zero downtime.
 
-## 🚀 Quick Start
+##  Quick Start
 
 1. **Clone & Install:**
    ```bash
@@ -33,7 +33,7 @@
    streamlit run app.py
    ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Frontend/Backend:** Streamlit (Python)
 - **AI/Data Services:** Google Gemini API, Pandas, Pillow
 
